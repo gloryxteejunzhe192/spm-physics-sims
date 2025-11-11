@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ohm’s Law Simulator - SPM Physics</title>
+  <link rel="stylesheet" href="css/style.css" />
+</head>
+<body>
+  <h1>Ohm’s Law Simulator (SPM Physics)</h1>
+  <div id="sim">
+    <svg width="400" height="300">
+      <!-- Battery -->
+      <rect x="50" y="100" width="20" height="60" fill="black" />
+      <rect x="80" y="90" width="10" height="80" fill="black" />
+      <!-- Resistor -->
+      <rect x="200" y="120" width="60" height="20" fill="gray" stroke="black" />
+      <!-- Wires -->
+      <line x1="70" y1="130" x2="200" y2="130" stroke="black" stroke-width="3" />
+      <line x1="260" y1="130" x2="330" y2="130" stroke="black" stroke-width="3" />
+      <line x1="330" y1="130" x2="330" y2="200" stroke="black" stroke-width="3" />
+      <line x1="330" y1="200" x2="50" y2="200" stroke="black" stroke-width="3" />
+      <line x1="50" y1="200" x2="50" y2="160" stroke="black" stroke-width="3" />
+      <!-- Ammeter -->
+      <circle cx="145" cy="130" r="20" stroke="black" stroke-width="2" fill="white" />
+      <text x="145" y="135" text-anchor="middle" font-size="12">A</text>
+      <!-- Voltmeter -->
+      <circle cx="230" cy="80" r="20" stroke="black" stroke-width="2" fill="white" />
+      <text x="230" y="85" text-anchor="middle" font-size="12">V</text>
+      <line x1="210" y1="90" x2="200" y2="120" stroke="black" stroke-width="1" />
+      <line x1="250" y1="90" x2="260" y2="120" stroke="black" stroke-width="1" />
+    </svg>
+
+    <div id="controls">
+      <label>Voltage (V): <input type="range" id="voltage" min="0" max="12" step="0.1" value="6" /> <span id="vDisplay">6.0</span> V</label>
+      <label>Resistance (Ω): <input type="range" id="resistance" min="1" max="100" step="1" value="10" /> <span id="rDisplay">10</span> Ω</label>
+    </div>
+
+    <div id="readings">
+      <p><strong>Current (I):</strong> <span id="current">0.60</span> A</p>
+      <p><strong>Voltage (V):</strong> <span id="vOut">6.0</span> V</p>
+      <p><strong>Resistance (R):</strong> <span id="rOut">10</span> Ω</p>
+    </div>
+
+    <div id="spm">
+      <h3>SPM Question</h3>
+      <p>A circuit has a voltage of 6.0 V and a resistance of 10 Ω. What is the current?</p>
+      <p><strong>Answer:</strong> <span id="answer">0.60 A</span></p>
+    </div>
+  </div>
+
+  <script src="js/ohm-law.js"></script>
+</body>
+</html>
