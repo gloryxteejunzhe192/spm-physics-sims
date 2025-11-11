@@ -22,16 +22,16 @@
       <!-- ===== Ammeter ===== -->
       <circle cx="170" cy="140" r="22" stroke="#333" stroke-width="2" fill="white"/>
       <text x="170" y="145" text-anchor="middle" font-size="12">A</text>
-      <!-- needle -->
-      <line id="ammeterNeedle" x1="170" y1="140"
-            x2="170" y2="125" stroke="crimson" stroke-width="2"
-            transform-origin="170 140"/>
+      <!-- Ammeter needle -->
+      <line id="ammeterNeedle" x1="170" y1="140" x2="195" y1="140"
+            stroke="crimson" stroke-width="2"
+            transform-origin="170 140"/> 
       <!-- ===== Voltmeter ===== -->
       <circle cx="230" cy="90" r="22" stroke="#333" stroke-width="2" fill="white"/>
       <text x="230" y="95" text-anchor="middle" font-size="12">V</text>
-      <!-- needle -->
-      <line id="voltmeterNeedle" x1="230" y1="90"
-            x2="230" y2="75" stroke="royalblue" stroke-width="2"
+      <!-- Voltmeter needle -->
+      <line id="voltmeterNeedle" x1="230" y1="90" x2="255" y1="90"
+            stroke="royalblue" stroke-width="2"
             transform-origin="230 90"/>
       <!-- ===== Bulb ===== -->
       <g id="bulb">
@@ -43,7 +43,9 @@
         <circle id="glow" cx="300" cy="140" r="18" fill="yellow" opacity="0"/>
       </g>
     </svg>
-
+    <!-- under the existing <svg>...</svg> -->
+    <canvas id="ivGraph" width="400" height="200"></canvas>
+    
     <div id="controls">
       <label>Voltage (V): <input type="range" id="voltage" min="0" max="12" step="0.1" value="6" /> <span id="vDisplay">6.0</span> V</label>
       <label>Resistance (Ω): <input type="range" id="resistance" min="1" max="100" step="1" value="10" /> <span id="rDisplay">10</span> Ω</label>
@@ -66,3 +68,4 @@
 </body>
 
 </html>
+
